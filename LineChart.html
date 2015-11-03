@@ -1,0 +1,67 @@
+<html>
+  <head>
+	<script type="text/javascript" src="https://www.google.com/jsapi"></script>
+	 <script type="text/javascript">
+		google.load('visualization', '1', { packages: ['corechart', 'line'] });
+			google.setOnLoadCallback(drawCurveTypes);
+
+			function drawCurveTypes() {
+			    var data = new google.visualization.DataTable();
+			    data.addColumn('date', 'Day');
+			    data.addColumn('number', 'Feridos');
+			    data.addColumn('number', 'Mortes');
+			    data.addColumn('number','Fatais');
+			    data.addColumn('number','Taxi');
+			    data.addColumn('number','Onibus');
+			    data.addColumn('number','Caminhao');
+			    data.addColumn('number','Lotacao');
+			    data.addColumn('number','Bicicleta');
+
+			    data.addRows([
+			        [new Date('2015-01-01'), 40, 50, 70, 70, 70, 80, 90, 87],
+			        [new Date('2015-01-15'), 20, 80, 70, 70, 70, 80, 90, 87],
+			        [new Date('2015-02-01'), 20, 80, 50, 70, 70, 80, 90, 87],
+			        [new Date('2015-02-15'), 60, 30, 70, 70, 70, 80, 90, 87],
+			        [new Date('2015-03-01'), 40, 50, 120, 70, 70, 80, 90, 87],
+			        [new Date('2015-03-15'), 20, 80, 126, 70, 70, 80, 90, 87],
+			        [new Date('2015-04-01'), 20, 80, 190, 70, 70, 80, 90, 87],
+			        [new Date('2015-04-15'), 60, 30, 70, 70, 70, 80, 90, 87],
+			        [new Date('2015-05-01'), 40, 50, 170, 70, 70, 80, 90, 87],
+			        [new Date('2015-05-15'), 20, 80, 75, 70, 70, 80, 90, 87],
+			        [new Date('2015-06-01'), 20, 80, 60, 70, 70, 80, 90, 87],
+			        [new Date('2015-06-15'), 60, 30, 40, 70, 70, 80, 90, 87],
+			        [new Date('2015-07-01'), 40, 50, 15, 70, 70, 80, 90, 87],
+			        [new Date('2015-07-15'), 20, 80, 10, 70, 70, 80, 90, 87],
+			        [new Date('2015-08-01'), 20, 80, 15, 70, 70, 80, 90, 87],
+			        [new Date('2015-08-15'), 60, 30, 25, 70, 70, 80, 90, 87],
+			        [new Date('2015-09-01'), 40, 50, 24, 70, 70, 80, 90, 87],
+			        [new Date('2015-09-15'), 20, 80, 23, 70, 70, 80, 90, 87],
+			        [new Date('2015-10-01'), 20, 80, 22, 70, 70, 80, 90, 87],
+			        [new Date('2015-10-15'), 60, 30, 27, 70, 70, 80, 90, 87],
+			        [new Date('2015-11-01'), 40, 50, 35, 70, 70, 80, 90, 87],
+			        [new Date('2015-11-15'), 20, 80, 34, 70, 70, 80, 90, 87],
+			        [new Date('2015-12-01'), 20, 80, 27, 70, 70, 80, 90, 87],
+			        [new Date('2015-12-15'), 60, 30, 40, 70, 70, 80, 90, 87],
+			    ]);
+
+			    var dateTicks = [];
+			    for (var m = 1; m <= 12; m++)
+			        dateTicks.push(new Date('2015-' + m + '-1'));
+
+			    var options = {
+			        hAxis: {
+			            format: 'MMMM',
+			            ticks: dateTicks
+			        }
+			    };
+
+			    var chart = new google.visualization.LineChart(document.getElementById('chart_div'));
+			    chart.draw(data, options);
+			}
+			
+			</script>
+		 </head>
+  	<body>
+    <div id="chart_div"></div>
+  </body>
+</html>
